@@ -9,7 +9,7 @@ Commands to add this boilerplate to your own github repository:
 - In your terminal type in `git remote -v` - you should see something similar to this: `origin git@github.com:laurxnemeth/boilerplate.git (fetch)`
 - Next, we are going to switch the origin from my GitHub to your own GitHub by running the following command in your terminal:
 - `git remote set-url origin (paste the SSH that we copied in step 4)`
-  ex: git remote set-url origin git@github.com:studentName/ContactList.git
+  ex: git remote set-url origin git@github.com:studentName/boilerplate.git
 - Since we have updated the origin of the code to be the GitHub repo that we created on our personal accounts. We now want to push the code up to GitHub with the `git push` command. (if you refresh your GitHub, you should now see the starter code in the GitHub repo that you just created)
 
 How to turn that repo into a template:
