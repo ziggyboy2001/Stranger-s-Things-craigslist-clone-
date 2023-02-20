@@ -1,13 +1,43 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #navbar {
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    max-height: 10%;
-    min-height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-height: 10%;
+  min-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.postInfo {
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 0px 8px 3px rgb(194, 193, 193);
+  padding: 1rem;
+  margin: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 768px;
+}
+.title{
+display: flex;
+justify-content: flex-start;
+}
+
+.navBtns {
+  padding: 3px;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+}
+.navBtns:hover{
+    box-shadow: inset 0px 0px 10px gray;
+    cursor: pointer;
+}
+.navBtns:active{
+    box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
+    color: rgb(13, 175, 229);
 }
