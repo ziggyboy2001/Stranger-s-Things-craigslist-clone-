@@ -84,3 +84,32 @@ export const registerUser = (username, password) => {
     })
     .catch(console.error);
 };
+
+export const createPost = (
+  title,
+  description,
+  price,
+  location,
+  willDeliver
+) => {
+  fetch(`${BASE_URL}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer TOKEN_STRING_HERE",
+    },
+    body: JSON.stringify({
+      post: {
+        title: title,
+        description: description,
+        price: price,
+        willDeliver: willDeliver,
+      },
+    }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+    })
+    .catch(console.error);
+};

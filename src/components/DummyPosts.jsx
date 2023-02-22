@@ -16,7 +16,10 @@ function DummyPosts(props) {
           <p>{post.description}</p>
           <p>Location: {post.location}</p>
         </div>
-        <div className="openedPostWindow"><img className="companyLogoPostWindow" src="/Untitled_Artwork 25.png" /></div>
+        <div className="openedPostWindow">
+            <img className="companyLogoPostWindow" 
+            src="/Untitled_Artwork 25.png" />
+            </div>
       </div>
     );
   });

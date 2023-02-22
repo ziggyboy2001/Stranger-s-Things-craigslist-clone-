@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, DummyPosts, Login, Register } from "./";
+import { Navbar, DummyPosts, Login, Register, NewPost } from "./";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Main = () => {
@@ -30,6 +30,7 @@ const Main = () => {
           <Route path="/" element={<DummyPosts posts={posts} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/newpost" element={<NewPost />} />
         </Routes>
       </BrowserRouter>
     </div>

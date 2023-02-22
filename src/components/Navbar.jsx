@@ -5,6 +5,7 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <img className="companyLogo" src="/Untitled_Artwork 25.png" alt="" />
+      <Link to="/newpost" className="listItemBtn">LIST AN ITEM</Link>
 
       <input className="searchInput"
         type="text"

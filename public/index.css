@@ -144,7 +144,6 @@ body {
   height: 20px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
-
 }
 .submitBtn:hover {
   background-color: rgb(255, 255, 255);
@@ -230,17 +229,98 @@ body {
     right: 17%;
     top: -30px;
 }
+.listItemBtn {
+    padding: 3px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 510px;
+    cursor: pointer;
+    font-family: "Fredoka One", cursive;
+  
+  }
+  .listItemBtn:hover {
+    box-shadow: inset 0px 0px 10px gray;
+  }
+  .listItemBtn:active {
+    border: 0.5px solid rgb(13, 175, 229);
+    box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
+  }
 .searchH3{
     position: absolute;
     right: 500px;
 }
 .searchInput{
     position: absolute;
-    right: 310px;
+    right: 300px;
     font-family: "Fredoka One", cursive;
-    height: 20px;
+    height: 25px;
     border: .5px solid black;
     border-radius: 5px;
     box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
     cursor: pointer;
+}
+.newPostFormBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.newPostFormFull{
+    border: 1px solid black;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem;
+    border: 1px solid black;
+border-radius: 10px;
+width: 250px;
+box-shadow: 5px 5px 5px rgb(26, 25, 25);
+background-color: rgb(169, 168, 168);
+
+
+}
+.newPostInput{
+    font-family: "Fredoka One", cursive;
+    height: 25px;
+    border: .5px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+.newPostLabelText{
+    color: white;
+        font-family: "Fredoka One", cursive;
+}
+.newPostBtn {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(220, 219, 219);
+    border: 0.5px solid black;
+    box-shadow: inset 0px 0px 3px black;
+    width: 70px;
+    height: 20px;
+    cursor: pointer;
+    font-family: "Fredoka One", cursive;
+    margin-left: 40px;
+  }
+  .newPostBtn:hover {
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid black;
+    box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
+  }
+  .newPostBtn:active {
+    background-color: rgb(13, 175, 229);
+    border: 0.5px solid rgb(13, 175, 229);
+    box-shadow: 0px 2px 0px rgb(86, 86, 86);
+    transform: translateY(1px);
+  }
+@media screen and (max-width: 1460px){
+    .openedPostWindow{
+        display: none;
+    }
 }
