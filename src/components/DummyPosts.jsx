@@ -10,7 +10,7 @@ function DummyPosts(props){
             <div className="postInfo" key={`${post._id}`}>
             <div>
             <h2>{post.title}</h2>
-            <p>{post.author.username}</p>
+            <p>Seller: {post.author.username}</p>
             <p>Price: {post.price}</p>
             <p>{post.description}</p>
             <p>Location: {post.location}</p>

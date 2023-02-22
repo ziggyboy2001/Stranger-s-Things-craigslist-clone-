@@ -1,4 +1,5 @@
-const BASE_URL = "https://strangers-things.herokuapp.com";
+const BASE_URL =
+  "https://strangers-things.herokuapp.com/api/2301-ftb-et-web-ft";
 
 export const getPosts = async () => {
   try {
@@ -41,4 +42,45 @@ export const postThePost = async (title, article) => {
   } catch (error) {
     console.log(error);
   }
+};
+export const loginUser = (username, password) => {
+  console.log(`${BASE_URL}/users/login`);
+  fetch(`${BASE_URL}/users/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user: {
+        username: username,
+        password: password,
+      },
+    }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+    })
+    .catch(console.error);
+};
+
+export const registerUser = (username, password) => {
+  console.log(`${BASE_URL}/users/register`);
+  fetch(`${BASE_URL}/users/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user: {
+        username: username,
+        password: password,
+      },
+    }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+    })
+    .catch(console.error);
 };

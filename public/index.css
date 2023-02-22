@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: gray;
 }
 
 #navbar {
@@ -12,27 +13,60 @@ body {
   max-height: 10%;
   min-height: 40px;
   font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
 .postInfo {
   border: 1px solid black;
   border-radius: 15px;
-  box-shadow: 0px 8px 3px rgb(194, 193, 193);
+  box-shadow: -4px 8px 3px rgb(49, 49, 49);
   padding: 1rem;
-  margin: 2rem;
+  margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 768px;
+  background-color: rgb(224, 222, 222);
+  cursor: pointer;
+}
+.postInfo:hover{
+    background-color: rgb(180, 178, 178);
+}
+.postInfo:active{
+    box-shadow: inset 0px 0px 7px rgb(49, 49, 49);
+    border: none;
+    transform: translateY(2px) ;
 }
 .title{
 display: flex;
 justify-content: flex-start;
 }
 
-.navBtns {
+.navBtns1 {
   padding: 3px;
   box-shadow: 0px 0px 10px gray;
   border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 210px;
 }
+.navBtns2 {
+    padding: 3px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 100px;
+  }
+  .navBtns3 {
+    padding: 3px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 10px;
+  }
 .navBtns:hover{
     box-shadow: inset 0px 0px 10px gray;
     cursor: pointer;
@@ -40,4 +74,84 @@ justify-content: flex-start;
 .navBtns:active{
     box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
     color: rgb(13, 175, 229);
+}
+.loginPage{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 250px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgb(26, 25, 25);
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(224, 222, 222);
+}
+.loginPageBox{
+    display: flex;
+    justify-content: center;
+}
+.submitBtn{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(220, 219, 219);
+    border: .5px solid black;
+    box-shadow: inset 0px 0px 3px black;
+    width: 70px;
+    height: 20px;
+    cursor: pointer;
+}
+.submitBtn:hover{
+    background-color: rgb(255, 255, 255);
+    border: .5px solid black;
+    box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
+}
+.submitBtn:active{
+    background-color: rgb(13, 175, 229);
+    border: .5px solid rgb(13, 175, 229);
+    box-shadow: 0px 2px 0px rgb(86, 86, 86);
+    transform:translateY(1px) ;
+}
+.userNameInput{
+    border-top: none;
+    border-right: none;
+    border-left: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: rgb(232, 240, 249);
+}
+.userNameInput:hover{
+cursor: pointer;
+}
+.passwordInput{
+    border-top: none;
+    border-right: none;
+    border-left: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: rgb(232, 240, 249);
+}
+.passwordInput:hover{
+    cursor: pointer;
+}
+.paperPlaneImg{
+    height: 70px;
+    position: absolute;
+    right: 330px;
+    top: 10px;
+}
+.registerLink{
+    font-size: x-small;
+}
+.companyLogo{
+    height: 115px;
+    width: 300px;
+    position: absolute;
+    left: 10px;
 }

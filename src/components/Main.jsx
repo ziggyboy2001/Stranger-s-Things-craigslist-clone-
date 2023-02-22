@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Navbar, DummyPosts, Login } from "./";
+import { Navbar, DummyPosts, Login, Register } from "./";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -25,13 +25,6 @@ const Main = () => {
       getPosts();
     }, []);
 
-// return posts.map((post) => {
-//     return (
-//         <div className="userName" key={`${post._id}`}></div>
-
-//     )
-// })
-
 
     return(
         <div id="main">
@@ -40,6 +33,8 @@ const Main = () => {
             <Routes>
             <Route path="/" element={<DummyPosts posts={posts} />}/>
             <Route path="/login" element={<Login />}/>
+            <Route path="/register" element={<Register />}/>
+
             </Routes>
             </BrowserRouter>
         </div>
