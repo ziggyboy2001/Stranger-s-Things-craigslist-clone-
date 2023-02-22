@@ -28,6 +28,9 @@ function Register() {
     } else {
       alert("Passwords do not match");
     }
+    if(confirmPass === null && password === null){
+        alert("No password was input")
+    }
   }
 
   const handleSubmit = (e) => {
@@ -89,6 +92,11 @@ function Register() {
           <Link to="/login" className="registerLink">
             Already have an account? Login here!
           </Link>
+          <img
+            className="companyLogoLoginBox"
+            src="/Untitled_Artwork 25.png"
+            alt=""
+          />
         </form>
       </div>
     </div>

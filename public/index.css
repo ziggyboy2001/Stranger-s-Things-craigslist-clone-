@@ -12,8 +12,9 @@ body {
   flex-grow: 1;
   max-height: 10%;
   min-height: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fredoka One", cursive;
   text-decoration: none;
+
 }
 
 .postInfo {
@@ -22,22 +23,32 @@ body {
   box-shadow: -4px 8px 3px rgb(49, 49, 49);
   padding: 1rem;
   margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fredoka One", cursive;
   max-width: 768px;
   background-color: rgb(224, 222, 222);
   cursor: pointer;
 }
-.postInfo:hover{
-    background-color: rgb(180, 178, 178);
+.postInfo:hover {
+  background-color: rgb(180, 178, 178);
 }
-.postInfo:active{
-    box-shadow: inset 0px 0px 7px rgb(49, 49, 49);
-    border: none;
-    transform: translateY(2px) ;
+.postInfo:active {
+  box-shadow: inset 0px 0px 7px rgb(49, 49, 49);
+  background-color: rgb(149, 148, 148);
+  border: none;
+  transform: translateY(2px);
 }
-.title{
-display: flex;
-justify-content: flex-start;
+.postTitle {
+  border: 2px solid black;
+  box-shadow: -1.5px 1.5px rgb(13, 175, 229);
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: max-content;
+  padding: 0.7rem;
+}
+.title {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .navBtns1 {
@@ -47,111 +58,189 @@ justify-content: flex-start;
   text-decoration: none;
   color: white;
   position: absolute;
-  right: 210px;
+  right: 195px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+
+}
+.navBtns1:hover {
+  box-shadow: inset 0px 0px 10px gray;
+}
+.navBtns1:active {
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
 }
 .navBtns2 {
-    padding: 3px;
-    box-shadow: 0px 0px 10px gray;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
+  padding: 3px;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 100px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+
+}
+.navBtns2:hover {
+  box-shadow: inset 0px 0px 10px gray;
+}
+.navBtns2:active {
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
+}
+.navBtns3 {
+  padding: 3px;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+
+}
+.navBtns3:hover {
+  box-shadow: inset 0px 0px 10px gray;
+}
+.navBtns3:active {
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
+}
+.navBtns:hover {
+  box-shadow: inset 0px 0px 10px gray;
+  cursor: pointer;
+}
+.navBtns:active {
+  box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
+  color: rgb(13, 175, 229);
+}
+.loginPage {
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 250px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgb(26, 25, 25);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(169, 168, 168);
+}
+.loginPageBox {
+  display: flex;
+  justify-content: center;
+}
+.submitBtn {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: rgb(220, 219, 219);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px black;
+  width: 70px;
+  height: 20px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+
+}
+.submitBtn:hover {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
+}
+.submitBtn:active {
+  background-color: rgb(13, 175, 229);
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: 0px 2px 0px rgb(86, 86, 86);
+  transform: translateY(1px);
+}
+.userNameInput {
+  border-top: none;
+  border-right: none;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: rgb(232, 240, 249);
+}
+.userNameInput:hover {
+  cursor: pointer;
+}
+.passwordInput {
+  border-top: none;
+  border-right: none;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: rgb(232, 240, 249);
+}
+.passwordInput:hover {
+  cursor: pointer;
+}
+.paperPlaneImg {
+  height: 50px;
+  position: absolute;
+  left: 650px;
+
+}
+.registerLink {
+  font-size: x-small;
+  color: rgb(43, 43, 43);
+}
+.companyLogo {
+  height: 115px;
+  width: 300px;
+  position: absolute;
+  left: 10px;
+}
+.companyLogoLoginBox{
+    height: 80px;
+    width: 180px;
+    margin-left: 40px;
+}
+.openedPostWindow{
+    border: .7px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    height: 600px;
+    width: 600px;
     position: absolute;
-    right: 100px;
-  }
-  .navBtns3 {
-    padding: 3px;
-    box-shadow: 0px 0px 10px gray;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
+    right: 25px;
+    top: 57px;
+    background-image:linear-gradient(
+        rgb(113, 113, 113),
+        rgb(193, 191, 191),
+        rgb(224, 222, 222),
+        rgb(224, 222, 222),
+        rgb(224, 222, 222),
+        rgb(224, 222, 222)
+    );
+    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+    /* position: -webkit-sticky;
+    position: sticky; */
+}
+.companyLogoPostWindow{
+    height: 150px;
     position: absolute;
-    right: 10px;
-  }
-.navBtns:hover{
-    box-shadow: inset 0px 0px 10px gray;
-    cursor: pointer;
+    right: 17%;
+    top: -30px;
 }
-.navBtns:active{
-    box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
-    color: rgb(13, 175, 229);
+.searchH3{
+    position: absolute;
+    right: 500px;
 }
-.loginPage{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 250px;
-    padding: 10px;
-    box-shadow: 5px 5px 5px rgb(26, 25, 25);
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(224, 222, 222);
-}
-.loginPageBox{
-    display: flex;
-    justify-content: center;
-}
-.submitBtn{
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: rgb(220, 219, 219);
-    border: .5px solid black;
-    box-shadow: inset 0px 0px 3px black;
-    width: 70px;
+.searchInput{
+    position: absolute;
+    right: 310px;
+    font-family: "Fredoka One", cursive;
     height: 20px;
-    cursor: pointer;
-}
-.submitBtn:hover{
-    background-color: rgb(255, 255, 255);
     border: .5px solid black;
-    box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
-}
-.submitBtn:active{
-    background-color: rgb(13, 175, 229);
-    border: .5px solid rgb(13, 175, 229);
-    box-shadow: 0px 2px 0px rgb(86, 86, 86);
-    transform:translateY(1px) ;
-}
-.userNameInput{
-    border-top: none;
-    border-right: none;
-    border-left: 2px solid rgb(0, 0, 0);
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    background-color: rgb(232, 240, 249);
-}
-.userNameInput:hover{
-cursor: pointer;
-}
-.passwordInput{
-    border-top: none;
-    border-right: none;
-    border-left: 2px solid rgb(0, 0, 0);
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    background-color: rgb(232, 240, 249);
-}
-.passwordInput:hover{
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
     cursor: pointer;
-}
-.paperPlaneImg{
-    height: 70px;
-    position: absolute;
-    right: 330px;
-    top: 10px;
-}
-.registerLink{
-    font-size: x-small;
-}
-.companyLogo{
-    height: 115px;
-    width: 300px;
-    position: absolute;
-    left: 10px;
 }
