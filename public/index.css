@@ -14,7 +14,10 @@ body {
   min-height: 40px;
   font-family: "Fredoka One", cursive;
   text-decoration: none;
-
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
 }
 
 .postInfo {
@@ -27,6 +30,8 @@ body {
   max-width: 768px;
   background-color: rgb(224, 222, 222);
   cursor: pointer;
+  z-index: 9999;
+  top: -50px;
 }
 .postInfo:hover {
   background-color: rgb(180, 178, 178);
@@ -61,7 +66,6 @@ body {
   right: 195px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
-
 }
 .navBtns1:hover {
   box-shadow: inset 0px 0px 10px gray;
@@ -80,7 +84,6 @@ body {
   right: 100px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
-
 }
 .navBtns2:hover {
   box-shadow: inset 0px 0px 10px gray;
@@ -99,7 +102,6 @@ body {
   right: 10px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
-
 }
 .navBtns3:hover {
   box-shadow: inset 0px 0px 10px gray;
@@ -186,7 +188,6 @@ body {
   height: 50px;
   position: absolute;
   left: 650px;
-
 }
 .registerLink {
   font-size: x-small;
@@ -198,129 +199,157 @@ body {
   position: absolute;
   left: 10px;
 }
-.companyLogoLoginBox{
-    height: 80px;
-    width: 180px;
-    margin-left: 40px;
+.companyLogoLoginBox {
+  height: 80px;
+  width: 180px;
+  margin-left: 40px;
 }
-.openedPostWindow{
-    border: .7px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    height: 600px;
-    width: 600px;
-    position: absolute;
-    right: 25px;
-    top: 57px;
-    background-image:linear-gradient(
-        rgb(113, 113, 113),
-        rgb(193, 191, 191),
-        rgb(224, 222, 222),
-        rgb(224, 222, 222),
-        rgb(224, 222, 222),
-        rgb(224, 222, 222)
-    );
-    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
-    /* position: -webkit-sticky;
-    position: sticky; */
+.openedPostWindow {
+  border: 0.7px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  height: 600px;
+  width: 600px;
+  top: 57px;
+  background-image: linear-gradient(
+    rgb(113, 113, 113),
+    rgb(193, 191, 191),
+    rgb(224, 222, 222),
+    rgb(224, 222, 222),
+    rgb(224, 222, 222),
+    rgb(224, 222, 222)
+  );
+  box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+  position: -webkit-sticky;
+  position: sticky;
 }
-.companyLogoPostWindow{
-    height: 150px;
-    position: absolute;
-    right: 17%;
-    top: -30px;
+.companyLogoPostWindow {
+  height: 150px;
+  position: absolute;
+  right: 17%;
+  top: -30px;
+}
+.openedPostContainer {
+  display: flex;
+  flex-direction: row;
+}
+.openedPostMessageSellerBtn {
+  position: relative;
+  top: 540px;
+  left: 220px;
+  border-radius: 5px;
+  background-color: rgb(220, 219, 219);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px black;
+  width: 130px;
+  height: 20px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+}
+.openedPostMessageSellerBtn:hover {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
+}
+.openedPostMessageSellerBtn:active {
+  background-color: rgb(13, 175, 229);
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: 0px 2px 0px rgb(86, 86, 86);
+  transform: translateY(1px);
 }
 .listItemBtn {
-    padding: 3px;
-    box-shadow: 0px 0px 10px gray;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    position: absolute;
-    right: 510px;
-    cursor: pointer;
-    font-family: "Fredoka One", cursive;
-  
-  }
-  .listItemBtn:hover {
-    box-shadow: inset 0px 0px 10px gray;
-  }
-  .listItemBtn:active {
-    border: 0.5px solid rgb(13, 175, 229);
-    box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
-  }
-.searchH3{
-    position: absolute;
-    right: 500px;
+  padding: 3px;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 510px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
 }
-.searchInput{
-    position: absolute;
-    right: 300px;
-    font-family: "Fredoka One", cursive;
-    height: 25px;
-    border: .5px solid black;
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
-    cursor: pointer;
+.listItemBtn:hover {
+  box-shadow: inset 0px 0px 10px gray;
 }
-.newPostFormBox{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.listItemBtn:active {
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: inset 0px 0px 10px rgb(13, 175, 229);
 }
-.newPostFormFull{
-    border: 1px solid black;
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    margin: 2rem;
-    border: 1px solid black;
-border-radius: 10px;
-width: 250px;
-box-shadow: 5px 5px 5px rgb(26, 25, 25);
-background-color: rgb(169, 168, 168);
-
-
+.searchH3 {
+  position: absolute;
+  right: 500px;
 }
-.newPostInput{
-    font-family: "Fredoka One", cursive;
-    height: 25px;
-    border: .5px solid black;
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
+.searchInput {
+  position: absolute;
+  right: 300px;
+  font-family: "Fredoka One", cursive;
+  height: 25px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+  cursor: pointer;
 }
-.newPostLabelText{
-    color: white;
-        font-family: "Fredoka One", cursive;
+.newPostFormBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.newPostFormFull {
+  border: 1px solid black;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 5px 5px 5px rgb(26, 25, 25);
+  background-color: rgb(169, 168, 168);
+}
+.newPostInput {
+  font-family: "Fredoka One", cursive;
+  height: 25px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+.newPostLabelText {
+  color: rgb(0, 0, 0);
+  font-family: "Fredoka One", cursive;
 }
 .newPostBtn {
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: rgb(220, 219, 219);
-    border: 0.5px solid black;
-    box-shadow: inset 0px 0px 3px black;
-    width: 70px;
-    height: 20px;
-    cursor: pointer;
-    font-family: "Fredoka One", cursive;
-    margin-left: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: rgb(220, 219, 219);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px black;
+  width: 70px;
+  height: 20px;
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+  margin-left: 65px;
+}
+.newPostBtn:hover {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid black;
+  box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
+}
+.newPostBtn:active {
+  background-color: rgb(13, 175, 229);
+  border: 0.5px solid rgb(13, 175, 229);
+  box-shadow: 0px 2px 0px rgb(86, 86, 86);
+  transform: translateY(1px);
+}
+.companyLogoListItemBox {
+  height: 80px;
+  margin-left: 20px;
+}
+@media screen and (max-width: 1460px) {
+  .openedPostWindow {
+    display: none;
   }
-  .newPostBtn:hover {
-    background-color: rgb(255, 255, 255);
-    border: 0.5px solid black;
-    box-shadow: inset 0px 0px 3px rgb(13, 175, 229);
-  }
-  .newPostBtn:active {
-    background-color: rgb(13, 175, 229);
-    border: 0.5px solid rgb(13, 175, 229);
-    box-shadow: 0px 2px 0px rgb(86, 86, 86);
-    transform: translateY(1px);
-  }
-@media screen and (max-width: 1460px){
-    .openedPostWindow{
-        display: none;
-    }
 }

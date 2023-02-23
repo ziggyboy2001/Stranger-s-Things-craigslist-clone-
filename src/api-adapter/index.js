@@ -43,73 +43,70 @@ export const postThePost = async (title, article) => {
     console.log(error);
   }
 };
-export const loginUser = (username, password) => {
-  console.log(`${BASE_URL}/users/login`);
-  fetch(`${BASE_URL}/users/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      user: {
-        username: username,
-        password: password,
+export const loginUser = async (username, password) => {
+  try {
+    console.log(`${BASE_URL}/users/login`);
+    const response = await fetch(`${BASE_URL}/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    }),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    })
-    .catch(console.error);
+      body: JSON.stringify({
+        user: {
+          username: username,
+          password: password,
+        },
+      }),
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const registerUser = (username, password) => {
-  console.log(`${BASE_URL}/users/register`);
-  fetch(`${BASE_URL}/users/register`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      user: {
-        username: username,
-        password: password,
+export const registerUser = async (username, password) => {
+  try {
+    console.log(`${BASE_URL}/users/register`);
+    fetch(`${BASE_URL}/users/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    }),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    })
-    .catch(console.error);
+      body: JSON.stringify({
+        user: {
+          username: username,
+          password: password,
+        },
+      }),
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const createPost = (
-  title,
-  description,
-  price,
-  location,
-  willDeliver
-) => {
-  fetch(`${BASE_URL}/posts`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
-    },
-    body: JSON.stringify({
-      post: {
-        title: title,
-        description: description,
-        price: price,
-        willDeliver: willDeliver,
+export const createPost = async (title, description, price) => {
+  try {
+    const response = await fetch(`${BASE_URL}/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-    }),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    })
-    .catch(console.error);
+      body: JSON.stringify({
+        post: {
+          title: title,
+          description: description,
+          price: price,
+          willDeliver: true,
+        },
+      }),
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
 };

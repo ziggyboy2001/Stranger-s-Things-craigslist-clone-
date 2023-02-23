@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { ReactDOM } from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../api-adapter";
 
 function Register() {
@@ -8,6 +8,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   async function makeProfile(userName, password, confirmPass) {
     console.log(userName, password, confirmPass);
@@ -28,7 +29,7 @@ function Register() {
     } else {
       alert("Passwords do not match");
     }
-    if(confirmPass === null && password === null){
+    if(confirmPass === null || password === null){
         alert("No password was input")
     }
   }
@@ -37,6 +38,12 @@ function Register() {
     e.preventDefault();
     makeProfile(userName, password, confirmPass);
     confirmPassword(password, confirmPass);
+    if (result != undefined) {
+        localStorage.setItem("token", result.data.token);
+        navigate("/login");
+      } else {
+        console.log(result.error);
+      }
   };
 
   return (

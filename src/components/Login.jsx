@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from "react";
 // import { ReactDOM } from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api-adapter";
 
 function Login() {
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  async function makeProfile(userName, password) {
-    console.log(userName, password);
-    try {
-      const result = await loginUser(userName, password);
-      console.log(result);
-      setUsername("");
-      setPassword("");
-    } catch (error) {
-      console.log(error);
-    }
+
+    const handleClick = async (event) => {
+        event.preventDefault();
+        const result = await loginUser(userName, password);
+        if (result != undefined) {
+          localStorage.setItem("token", result.data.token);
+          navigate("/");
+        } else {
+          console.log(result.error);
+        }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    makeProfile(userName, password);
-  };
 
   return (
     <div className="loginPageBox">
       <div className="loginPage">
         <h1>Please login</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleClick}>
           <p>Username:</p>
           <input
             className="userNameInput"

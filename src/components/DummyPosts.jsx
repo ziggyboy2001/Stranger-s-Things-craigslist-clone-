@@ -1,10 +1,13 @@
 import { React, useState, useEffect } from "react";
 import { ReactDOM } from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { getIndividualFPost } from "../api-adapter";
 
 function DummyPosts(props) {
-  console.log(props);
-  return props.posts.map((post) => {
+    let { id } = useParams([]);
+    const[openedPost, setOpenedPost] = useState([]);
+  console.log(id);
+  const mapPosts = props.posts.map((post) => {
     return (
       <div className="postInfo" key={`${post._id}`}>
         <div>
@@ -16,13 +19,27 @@ function DummyPosts(props) {
           <p>{post.description}</p>
           <p>Location: {post.location}</p>
         </div>
-        <div className="openedPostWindow">
-            <img className="companyLogoPostWindow" 
-            src="/Untitled_Artwork 25.png" />
-            </div>
       </div>
     );
   });
+// getIndividualFPost()
+  return (
+    // <div key={`${post._id}`}>
+    <div className="openedPostContainer">
+            <div>{mapPosts}</div>
+        <div className="openedPostWindow" >
+          <img
+            className="companyLogoPostWindow"
+            src="/Untitled_Artwork 25.png"
+            />
+          {/* <p>Seller: {post.author.username}</p>
+          <p>Price: {post.price}</p> */}
+        <button className="openedPostMessageSellerBtn">MESSAGE SELLER</button>
+        </div>
+      <div>
+      </div>
+    </div>
+  );
 }
 
 export default DummyPosts;
