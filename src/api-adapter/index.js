@@ -6,15 +6,15 @@ export const getPosts = async () => {
     const response = await fetch(BASE_URL, {
       method: "GET",
     });
-    const reult = await response.json();
+    const result = await response.json();
     return XPathResult;
   } catch (error) {
     console.log(error);
   }
 };
-export const getIndividualFPost = async (id) => {
+export const getIndividualPost = async (_id) => {
   try {
-    const response = await fetch(`${BASE_URL}/${id}`, {
+    const response = await fetch(`${BASE_URL}/${_id}`, {
       method: "GET",
     });
     const result = await response.json();
@@ -67,19 +67,21 @@ export const loginUser = async (username, password) => {
 
 export const registerUser = async (username, password) => {
   try {
-    console.log(`${BASE_URL}/users/register`);
-    fetch(`${BASE_URL}/users/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: username,
-          password: password,
+    const response = await fetch(
+      "https://strangers-things.herokuapp.com/api/2301-ftb-et-web-ft/users/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      }),
-    });
+        body: JSON.stringify({
+          user: {
+            username: username,
+            password: password,
+          },
+        }),
+      }
+    );
     const result = await response.json();
     return result;
   } catch (error) {
@@ -101,6 +103,26 @@ export const createPost = async (title, description, price) => {
           description: description,
           price: price,
           willDeliver: true,
+        },
+      }),
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const MessageSeller = async (content) => {
+  try {
+    const response = await fetch(`${BASE_URL}/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        message: {
+          content: content,
         },
       }),
     });

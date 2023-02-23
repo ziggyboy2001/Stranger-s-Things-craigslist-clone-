@@ -291,23 +291,23 @@ body {
 .newPostFormBox {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 .newPostFormFull {
   border: 1px solid black;
-  width: 500px;
   display: flex;
   justify-content: center;
   padding: 1rem;
   margin: 2rem;
   border-radius: 10px;
-  width: 250px;
+  width: 300px;
   box-shadow: 5px 5px 5px rgb(26, 25, 25);
   background-color: rgb(169, 168, 168);
 }
 .newPostInput {
   font-family: "Fredoka One", cursive;
   height: 25px;
+  width: 200px;
   border: 0.5px solid black;
   border-radius: 5px;
   border-top-right-radius: 0px;

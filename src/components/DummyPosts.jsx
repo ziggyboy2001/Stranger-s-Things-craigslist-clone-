@@ -1,11 +1,11 @@
-import { React, useState, useEffect } from "react";
+import  React, { useState, useEffect } from "react";
 import { ReactDOM } from "react-dom";
 import { Link, useParams } from "react-router-dom";
-import { getIndividualFPost } from "../api-adapter";
+import { getIndividualPost } from "../api-adapter";
 
 function DummyPosts(props) {
     let { id } = useParams([]);
-    const[openedPost, setOpenedPost] = useState([]);
+    const [openedPost, setOpenedPost] = useState([]);
   console.log(id);
   const mapPosts = props.posts.map((post) => {
     return (
@@ -22,7 +22,8 @@ function DummyPosts(props) {
       </div>
     );
   });
-// getIndividualFPost()
+getIndividualPost()
+
   return (
     // <div key={`${post._id}`}>
     <div className="openedPostContainer">
@@ -32,8 +33,6 @@ function DummyPosts(props) {
             className="companyLogoPostWindow"
             src="/Untitled_Artwork 25.png"
             />
-          {/* <p>Seller: {post.author.username}</p>
-          <p>Price: {post.price}</p> */}
         <button className="openedPostMessageSellerBtn">MESSAGE SELLER</button>
         </div>
       <div>

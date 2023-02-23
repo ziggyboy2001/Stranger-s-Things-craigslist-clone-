@@ -4,46 +4,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../api-adapter";
 
 function Register() {
-  const [userName, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
-  const [users, setUsers] = useState([]);
+//   const [confirmPass, setConfirmPass] = useState("");
+//   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  async function makeProfile(userName, password, confirmPass) {
-    console.log(userName, password, confirmPass);
-    try {
-      const result = await registerUser(userName, password, confirmPass);
-      console.log(result);
-      setUsername("");
-      setPassword("");
-      setConfirmPass("");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  function confirmPassword(password) {
-    if (confirmPass === password) {
-      alert("Thank you!");
-      return true;
-    } else {
-      alert("Passwords do not match");
-    }
-    if(confirmPass === null || password === null){
-        alert("No password was input")
-    }
-  }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    makeProfile(userName, password, confirmPass);
-    confirmPassword(password, confirmPass);
-    if (result != undefined) {
-        localStorage.setItem("token", result.data.token);
+    // makeProfile(username, password);
+    const result = await registerUser(username, password);
+    localStorage.setItem("token", result.data.token);
+    setUsername("")
+    setPassword("")
         navigate("/login");
-      } else {
-        console.log(result.error);
-      }
+
   };
 
   return (
@@ -54,7 +29,7 @@ function Register() {
           <p>Username:</p>
           <input
             className="userNameInput"
-            value={userName}
+            value={username}
             type="text"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
@@ -72,10 +47,10 @@ function Register() {
           <p>Confirm Password:</p>
           <input
             className="passwordInput"
-            value={confirmPass}
+            // value={confirmPass}
             type="text"
             placeholder="Confirm Password"
-            onChange={(e) => setConfirmPass(e.target.value)}
+            // onChange={(e) => setConfirmPass(e.target.value)}
           />
 
           <br></br>

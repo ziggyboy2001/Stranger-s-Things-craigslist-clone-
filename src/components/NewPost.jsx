@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import { createPost } from "../api-adapter"
+import { MultilineInput } from 'react-input-multiline';
 
 
 function NewPost() {
@@ -28,8 +29,8 @@ function NewPost() {
         <form
           onSubmit={handleClick}
         >
-            <img className="companyLogoListItemBox" src="/Untitled_Artwork 25.png" />
           <div className="newPostLabelText">
+            <h3>CREATE A NEW LISTING</h3>
             <label>
               Title:
               <input
@@ -47,7 +48,7 @@ function NewPost() {
           <div className="newPostLabelText">
             <label>
               Description:
-              <input
+              <textarea
                 className="newPostInput"
                 name="description"
                 type="text"
@@ -81,6 +82,8 @@ function NewPost() {
               POST
             </button>
           </div>
+          <img className="companyLogoListItemBox" src="/Untitled_Artwork 25.png" />
+
         </form>
       </div>
     </div>
