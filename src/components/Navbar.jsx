@@ -1,22 +1,8 @@
 import React, { useState }from "react";
 import { Link, Outlet, Route, Router } from "react-router-dom";
+import { SearchBar } from "./"
 
 const Navbar = () => {
-  const [search, setSearch] = useState("");
-
-  const searchResults = [
- 
-  ];
-  const handleChange = (event) => {
-    event.preventDefault();
-    setSearch(event.target.value);
-  };
-  if(search.length > 0){
-    searchResults.filter((searches) => {
-      return searches.name.match(search);
-    })
-  }
-
 
 
 
@@ -28,10 +14,13 @@ const Navbar = () => {
       <input className="searchInput"
         type="text"
         placeholder="Search..."
-        onChange={handleChange}
-        value={search}
+
       />
-      <h3 className="navBtns1">HOME</h3>
+      {/* <div>{<SearchBar />}</div> */}
+
+      <Link to="/" className="navBtns1">
+        HOME
+      </Link>
       <Link to="/" className="navBtns2">
         POSTS
       </Link>

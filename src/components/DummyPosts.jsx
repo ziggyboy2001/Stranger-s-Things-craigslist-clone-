@@ -3,6 +3,7 @@ import { ReactDOM } from "react-dom";
 import { Link, useParams } from "react-router-dom";
 import { getIndividualPost, DeletePost } from "../api-adapter";
 
+
 function DummyPosts(props) {
     const [openedPost, setOpenedPost] = useState({});
 
@@ -20,6 +21,9 @@ function DummyPosts(props) {
       console.log(result.error);
     }
   };
+
+// const result = post.filter(post => post.title.includes)
+
   const mapPosts = props.posts.map((post) => {
     return (
       <div className="postInfo" onClick={()=>{displayPost(post)}} key={`${post._id}`}>
@@ -29,7 +33,11 @@ function DummyPosts(props) {
           <h2 className="postTitle">{post.title}</h2>
           <p>Seller: {post.author.username}</p>
           <p>Price: {post.price}</p>
+        { post.isAuthor ?
+        <div>
           <button className="deleteBtn" onClick={()=>{handleClickDelete(post._id)}}>DELETE</button>
+        </div> : null
+  }
         </div>
       </div>
     );
@@ -60,6 +68,10 @@ getIndividualPost()
             <p>Location: {openedPost.location}</p>
             </div>
         <button className="openedPostMessageSellerBtn">MESSAGE SELLER</button>
+
+        <Link to="/profile" className="openedPostMyProfileBtn">
+        MY PROFILE
+      </Link>
         </div>
         </div>
       <div>
