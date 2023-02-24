@@ -132,3 +132,18 @@ export const MessageSeller = async (content) => {
     console.log(error);
   }
 };
+export const DeletePost = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};

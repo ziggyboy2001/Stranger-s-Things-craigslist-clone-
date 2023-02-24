@@ -12,6 +12,7 @@ function Login() {
     const handleClick = async (event) => {
         event.preventDefault();
         const result = await loginUser(userName, password);
+        console.log(result)
         if (result != undefined) {
           localStorage.setItem("token", result.data.token);
           navigate("/");

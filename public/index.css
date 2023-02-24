@@ -28,9 +28,9 @@ body {
   margin: 1rem;
   font-family: "Fredoka One", cursive;
   max-width: 768px;
+  min-width: 800px;
   background-color: rgb(224, 222, 222);
   cursor: pointer;
-  z-index: 9999;
   top: -50px;
 }
 .postInfo:hover {
@@ -233,7 +233,7 @@ body {
   flex-direction: row;
 }
 .openedPostMessageSellerBtn {
-  position: relative;
+  position: absolute;
   top: 540px;
   left: 220px;
   border-radius: 5px;
@@ -244,6 +244,7 @@ body {
   height: 20px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
+  z-index: 9999;
 }
 .openedPostMessageSellerBtn:hover {
   background-color: rgb(255, 255, 255);
@@ -348,8 +349,28 @@ body {
   height: 80px;
   margin-left: 20px;
 }
-@media screen and (max-width: 1460px) {
+.openedPostText{
+    box-shadow: inset 0px 0px 10px rgb(49, 49, 49);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 150px;
+    left: 125px;
+    width: 300px;
+    height: 300px;
+    font-family: "Fredoka One", cursive;
+    padding: 1rem;
+
+}
+.deleteBtn:active{
+    background-color: red;
+}
+
+
+/* @media screen and (max-width: 1460px) {
   .openedPostWindow {
     display: none;
   }
-}
+} */

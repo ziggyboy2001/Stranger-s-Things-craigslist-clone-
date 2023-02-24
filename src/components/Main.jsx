@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
+  
 
   async function getPosts() {
     try {

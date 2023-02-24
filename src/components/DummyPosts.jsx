@@ -1,28 +1,47 @@
 import  React, { useState, useEffect } from "react";
 import { ReactDOM } from "react-dom";
 import { Link, useParams } from "react-router-dom";
-import { getIndividualPost } from "../api-adapter";
+import { getIndividualPost, DeletePost } from "../api-adapter";
 
 function DummyPosts(props) {
-    let { id } = useParams([]);
-    const [openedPost, setOpenedPost] = useState([]);
-  console.log(id);
+    const [openedPost, setOpenedPost] = useState({});
+
+  function displayPost (post){
+    console.log(post)
+    setOpenedPost(post);
+    console.log(openedPost)
+  }
+  const handleClickDelete = async (id) => {
+    const result = await DeletePost(id);
+    console.log("hello")
+    if (result != undefined) {
+        return;
+    } else {
+      console.log(result.error);
+    }
+  };
   const mapPosts = props.posts.map((post) => {
     return (
-      <div className="postInfo" key={`${post._id}`}>
+      <div className="postInfo" onClick={()=>{displayPost(post)}} key={`${post._id}`}>
         <div>
           <img className="paperPlaneImg" src="/Untitled_Artwork 23.png" />
 
           <h2 className="postTitle">{post.title}</h2>
           <p>Seller: {post.author.username}</p>
           <p>Price: {post.price}</p>
-          <p>{post.description}</p>
-          <p>Location: {post.location}</p>
+          <button className="deleteBtn" onClick={()=>{handleClickDelete(post._id)}}>DELETE</button>
         </div>
       </div>
     );
   });
 getIndividualPost()
+
+// function filterPosts (id) {
+//     for(let i = 0; i <= posts.length; i++)
+//     if(posts.id ){
+
+//     }
+// }
 
   return (
     // <div key={`${post._id}`}>
@@ -33,12 +52,22 @@ getIndividualPost()
             className="companyLogoPostWindow"
             src="/Untitled_Artwork 25.png"
             />
+        <div className="openedPostTextBox">
+        <div className="openedPostText">
+            <h2>{openedPost.title}</h2>
+            <p>Price: {openedPost.price}</p>
+            <p>Description: {openedPost.description}</p>
+            <p>Location: {openedPost.location}</p>
+            </div>
         <button className="openedPostMessageSellerBtn">MESSAGE SELLER</button>
+        </div>
         </div>
       <div>
       </div>
     </div>
-  );
+);
 }
+
+
 
 export default DummyPosts;
