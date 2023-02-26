@@ -50,23 +50,13 @@ function Register() {
             // value={confirmPass}
             type="text"
             placeholder="Confirm Password"
-            // onChange={(e) => setConfirmPass(e.target.value)}
           />
 
           <br></br>
           <button
             className="submitBtn"
             type="submit"
-            // onClick={function submitSuccess(props) {
-            //     console.log(props)
-            //     return props.users.map((user) => {
-            //       const successTrue = {user.success} === true
-            //     {successTrue
-            //     ? <Link to="/login" className="submitLink" />
-            //     : alert("PW doesnt match")
-            // }
-            //   });
-            // }}
+
           >
             Submit
           </button>

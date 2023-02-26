@@ -22,7 +22,6 @@ function NewPost() {
     }
   };
 
-
   return (
     <div className="newPostFormBox">
       <div className="newPostFormFull">

@@ -294,7 +294,7 @@ body {
   text-decoration: none;
   color: white;
   position: absolute;
-  right: 510px;
+  right: 350px;
   cursor: pointer;
   font-family: "Fredoka One", cursive;
 }
@@ -494,6 +494,14 @@ body {
     position: relative;
     left: -180px;
     width: 400px;
+  }
+  .Input{
+    font-family: "Fredoka One", cursive;
+
+  }
+  .searchButton{
+    font-family: "Fredoka One", cursive;
+    width: 60px;
   }
 
 

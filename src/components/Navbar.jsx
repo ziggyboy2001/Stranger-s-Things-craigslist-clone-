@@ -2,7 +2,7 @@ import React, { useState }from "react";
 import { Link, Outlet, Route, Router } from "react-router-dom";
 import { SearchBar } from "./"
 
-const Navbar = () => {
+const Navbar = (props) => {
 
 
 
@@ -11,11 +11,7 @@ const Navbar = () => {
       <img className="companyLogo" src="/Untitled_Artwork 25.png" alt="" />
       <Link to="/newpost" className="listItemBtn">LIST AN ITEM</Link>
 
-      <input className="searchInput"
-        type="text"
-        placeholder="Search..."
-
-      />
+      <SearchBar posts={props.posts} setPosts={props.setPosts} />
       {/* <div>{<SearchBar />}</div> */}
 
       <Link to="/" className="navBtns1">
@@ -27,6 +23,7 @@ const Navbar = () => {
       <Link to="/login" className="navBtns3">
         LOGIN
       </Link>
+
     </div>
   );
 };

@@ -148,3 +148,17 @@ export const DeletePost = async (id) => {
     console.log(error);
   }
 };
+const myData = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/me`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN_STRING_HERE}`,
+      },
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
