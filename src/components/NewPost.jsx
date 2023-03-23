@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
-import { createPost } from "../api-adapter"
-import { MultilineInput } from 'react-input-multiline';
+import { useNavigate } from "react-router-dom";
+import { createPost } from "../api-adapter";
+import { MultilineInput } from "react-input-multiline";
 
-
-function NewPost() {
+function NewPost(props) {
   const [newTitle, setNewTitle] = useState();
   const [newDescription, setNewDescription] = useState();
   const [newPrice, setNewPrice] = useState();
   const navigate = useNavigate();
 
+  const posts = props.posts;
+  const setPosts = props.setPosts;
+
   const handleClick = async (event) => {
     event.preventDefault();
     const result = await createPost(newTitle, newDescription, newPrice);
-    if (result != undefined) {
-      localStorage.setItem("token", result.data.token);
-      navigate("/");
-    } else {
-      console.log(result.error);
-    }
+    const postsCopy = [...posts];
+    postsCopy.push(result.data.post);
+    setPosts(postsCopy);
+    navigate("/");
   };
 
   return (
     <div className="newPostFormBox">
       <div className="newPostFormFull">
-        <form
-          onSubmit={handleClick}
-        >
+        <form onSubmit={handleClick}>
           <div className="newPostLabelText">
             <h3>CREATE A NEW LISTING</h3>
             <label>
@@ -38,7 +36,7 @@ function NewPost() {
                 type="text"
                 value={newTitle}
                 onChange={(event) => {
-                    console.log(event.target.value)
+                  console.log(event.target.value);
                   setNewTitle(event.target.value);
                 }}
               />
@@ -53,7 +51,7 @@ function NewPost() {
                 type="text"
                 value={newDescription}
                 onChange={(event) => {
-                    console.log(event.target.value)
+                  console.log(event.target.value);
 
                   setNewDescription(event.target.value);
                 }}
@@ -69,7 +67,7 @@ function NewPost() {
                 type="text"
                 value={newPrice}
                 onChange={(event) => {
-                    console.log(event.target.value)
+                  console.log(event.target.value);
 
                   setNewPrice(event.target.value);
                 }}
@@ -81,8 +79,10 @@ function NewPost() {
               POST
             </button>
           </div>
-          <img className="companyLogoListItemBox" src="/Untitled_Artwork 25.png" />
-
+          <img
+            className="companyLogoListItemBox"
+            src="/Untitled_Artwork 25.png"
+          />
         </form>
       </div>
     </div>
