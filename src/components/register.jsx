@@ -6,8 +6,8 @@ import { registerUser } from "../api-adapter";
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//   const [confirmPass, setConfirmPass] = useState("");
-//   const [users, setUsers] = useState([]);
+  //   const [confirmPass, setConfirmPass] = useState("");
+  //   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -15,10 +15,9 @@ function Register() {
     // makeProfile(username, password);
     const result = await registerUser(username, password);
     localStorage.setItem("token", result.data.token);
-    setUsername("")
-    setPassword("")
-        navigate("/login");
-
+    setUsername("");
+    setPassword("");
+    navigate("/login");
   };
 
   return (
@@ -53,11 +52,7 @@ function Register() {
           />
 
           <br></br>
-          <button
-            className="submitBtn"
-            type="submit"
-
-          >
+          <button className="submitBtn" type="submit">
             Submit
           </button>
           <br></br>
